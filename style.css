@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Assistant&family=Ephesis&family=Martel+Sans&family=Poppins&family=Saira+Extra+Condensed&family=Space+Grotesk&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    color: black;
+    font-family: 'Space Grotesk', 'Poppins', Arial, Helvetica, sans-serif;
+}
