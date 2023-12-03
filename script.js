@@ -1,4 +1,3 @@
-// Event listener for when the window has finished loading
 window.addEventListener('load', () => {
 	// Retrieve todos from localStorage or initialize an empty array
 	todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -22,33 +21,46 @@ window.addEventListener('load', () => {
 	// Event listener for form submission to add a new todo
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
+        // Retrieve the entered todo
+        let enteredTodo = e.target.elements.content.value;
+        redAlert = document.getElementById('alert');
+        // Check if the length of the entered todo is less than 1
+        if (enteredTodo.length <= 1) {
+            // Display an error message
+            redAlert.innerHTML = "Too Short, add a valid Todo!!!";
+            redAlert.style.color = "Red"
+            redAlert.style.margin = "10px"
+        } else {
+            redAlert.innerHTML = "To Do added. Add more todos!";
+            redAlert.style.color = "Green"
+            redAlert.style.margin = "10px"
+            // Create a new todo object
+            const todo = {
+                content: enteredTodo,
+                done: false,
+                createdAt: new Date().getTime()
+            }
 
-		// Create a new todo object
-		const todo = {
-			content: e.target.elements.content.value,
-			done: false,
-			createdAt: new Date().getTime()
-		}
+            // Add the new todo to the todos array
+            todos.push(todo);
 
-		// Add the new todo to the todos array
-		todos.push(todo);
+            // Store the updated todos array in localStorage
+            localStorage.setItem('todos', JSON.stringify(todos));
 
-		// Store the updated todos array in localStorage
-		localStorage.setItem('todos', JSON.stringify(todos));
+            // Reset the form
+            e.target.reset();
 
-		// Reset the form
-		e.target.reset();
-
-		// Display the updated todos
-		DisplayTodos()
+            // Display the updated todos
+            DisplayTodos();
+        }
 	})
 
 	// Display the todos when the page loads
-	DisplayTodos()
+	DisplayTodos();
 })
 
 // Function to display todos in the DOM
-function DisplayTodos () {
+function DisplayTodos() {
 	// Select the todo list container
 	const todoList = document.querySelector('#todo-list');
 	// Clear the existing content of the todo list container
@@ -114,7 +126,7 @@ function DisplayTodos () {
 			}
 
 			// Display the updated todos
-			DisplayTodos()
+			DisplayTodos();
 		})
 
 		// Event listener for the 'Edit' button
@@ -134,7 +146,7 @@ function DisplayTodos () {
 				// Store the updated todos array in localStorage
 				localStorage.setItem('todos', JSON.stringify(todos));
 				// Display the updated todos
-				DisplayTodos()
+				DisplayTodos();
 			})
 		})
 
@@ -145,7 +157,7 @@ function DisplayTodos () {
 			// Store the updated todos array in localStorage
 			localStorage.setItem('todos', JSON.stringify(todos));
 			// Display the updated todos
-			DisplayTodos()
+			DisplayTodos();
 		})
 	})
 }

@@ -165,11 +165,11 @@ input:checked ~ .bubble::after {
 
 .todo-item .actions .edit {
 	margin-right: 0.5rem;
-	background-color: black;
+	background-color: green;
 }
 
 .todo-item .actions .delete {
-	background-color: black;
+	background-color: red;
 }
 
 .todo-item.done .todo-content input {
