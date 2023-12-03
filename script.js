@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
             redAlert.style.margin = "10px"
         } else {
             redAlert.innerHTML = "To Do added. Add more todos!";
-            redAlert.style.color = "Red"
+            redAlert.style.color = "Green"
             redAlert.style.margin = "10px"
             // Create a new todo object
             const todo = {
