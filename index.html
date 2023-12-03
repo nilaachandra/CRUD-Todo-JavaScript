@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Todo List 2022 with LocalStorage</title>
+
+	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-    <h1>Welcome, Add your Task</h1>
-    <form id="task-form">
-        <input type="text" id="new-task" placeholder="Add Your Tasks">
-        <input type="submit" value="Add Task" id="new-task-submit">
-        <p id="alert"></p>
-    </form>
-</header>
-<main>
-    <section>
-        <h2>Your Tasks</h2>
-        <div id="tasks">
-            <!-- <div class="content">
-            <input type="text" class="text" value="Procastinate Whole Day" readonly>
-        </div>
-
-        <div class="actions">
-            <button class="edit">Edit</button>
-            <button class="Delete">Delete</button>
-        </div> -->
-    </div>
-    </section>
-</main>
-    <script src="script.js"></script>
+	<main class="app">
+		<section class="greeting">
+			<h2 class="title">
+				What's up, <input type="text" id="name" placeholder="Name here" />
+			</h2>
+		</section>
+		<section class="create-todo">
+			<h3>CREATE A TO DO</h3>
+			<form id="new-todo-form">
+				<h4>What's on your to do?</h4>
+				<input 
+					type="text" 
+					placeholder="e.g. Procastinate whole day!"
+					name="content"
+					id="content" />
+				<input type="submit" value="Add todo" />
+			</form>
+		</section>
+        <section class="todo-list">
+			<h3>TODO LIST</h3>
+			<div class="list" id="todo-list"></div>
+		</section>
+	</main>
+	<script src="script.js"></script>
 </body>
 </html>
