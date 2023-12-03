@@ -1,178 +1,196 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Assistant&family=Ephesis&family=Martel+Sans&family=Poppins&family=Saira+Extra+Condensed&family=Space+Grotesk&display=swap');
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: white;
     color: black;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
-#name{
+
+#name {
     font-family: 'Poppins';
 }
-input:not([type="radio"]):not([type="checkbox"]), button {
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
-	cursor: initial;
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
 }
+
 section {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
+
 h3 {
-	color: black;
-	font-size: 1rem;
-	font-weight: 400;
-	margin-bottom: 0.5rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
 h4 {
-	color: black;
-	font-size: 0.875rem;
-	font-weight: 700;
-	margin-bottom: 0.5rem;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
+
 .greeting .title {
-	display: flex;
+    display: flex;
 }
+
 .greeting .title input {
-	margin-left: 0.5rem;
-	flex: 1 1 0%;
-	min-width: 0;
+    margin-left: 0.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
 }
-.greeting .title, 
+
+.greeting .title,
 .greeting .title input {
-	color: black;
-	font-size: 1.5rem;
-	font-weight: 700;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
+
 .create-todo input[type="text"] {
-	display: block;
-	width: 100%;
-	font-size: 1.125rem;
-	padding: 1rem 1.5rem;
-	color: black;
-	background-color: #FFF;
-	border-radius: 0.5rem;
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: black;
+    background-color: #FFF;
+    border-radius: 0.5rem;
     border: 1px solid black;
-	margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
+
 input[type="radio"],
 input[type="checkbox"] {
-	display: none;
+    display: none;
 }
 
 .bubble {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 20px;
-	height: 20px;
-	border-radius: 999px;
-	border: 2px solid black;
-	box-shadow: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 2px solid black;
+    box-shadow: black;
 }
 
 .bubble::after {
-	content: '';
-	display: block;
-	opacity: 0;
-	width: 0px;
-	height: 0px;
-	background-color: black;
-	box-shadow: black;
-	border-radius: 999px;
-	transition: 0.2s ease-in-out;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: black;
+    box-shadow: black;
+    border-radius: 999px;
+    transition: 0.2s ease-in-out;
 }
 
-input:checked ~ .bubble::after {
-	width: 10px;
-	height: 10px;
-	opacity: 1;
+input:checked~.bubble::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
 }
+
 .create-todo input[type="submit"] {
-	display: block;
-	width: 100%;
-	font-size: 1.125rem;
-	padding: 1rem 1.5rem;
-	color: #FFF;
-	font-weight: 700;
-	text-transform: uppercase;
-	background-color: blue;
-	box-shadow: black;
-	border-radius: 0.5rem;
-	cursor: pointer;
-	transition: 0.2s ease-out;
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: #FFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: blue;
+    box-shadow: black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-out;
 }
 
 .create-todo input[type="submit"]:hover {
-	opacity: 0.75;
+    opacity: 0.75;
 }
 
 .todo-list .list {
-	margin: 1rem 0;
+    margin: 1rem 0;
 }
 
 .todo-list .todo-item {
-	display: flex;
-	align-items: center;
-	background-color: #FFF;
-	padding: 1rem;
-	border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column; /* Updated to column layout */
+    align-items: flex-start; /* Align items at the start */
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
     border: 1px solid black;
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .todo-item label {
-	display: block;
-	margin-right: 1rem;
-	cursor: pointer;
+    display: block;
+    margin-bottom: 0.5rem; /* Adjusted margin */
+    cursor: pointer;
 }
 
 .todo-item .todo-content {
-	flex: 1 1 0%;
+    width: 100%; /* Full width for the content */
+    display: flex;
 }
 
 .todo-item .todo-content input {
-	color: black;
-	font-size: 1.125rem;
+    color: black;
+    font-size: 1.125rem;
+    height: fit-content;
+    width: 100% ; /* Full width for the input */
 }
 
 .todo-item .actions {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem; /* Adjusted margin */
+    width: 100%; /* Full width for the actions */
 }
+
 .todo-item .actions button {
-	display: block;
-	padding: 0.5rem;
-	border-radius: 0.25rem;
-	color: #FFF;
-	cursor: pointer;
-	transition: 0.2s ease-in-out;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
 .todo-item .actions button:hover {
-	opacity: 0.75;
+    opacity: 0.75;
 }
 
 .todo-item .actions .edit {
-	margin-right: 0.5rem;
-	background-color: green;
+    margin-right: 0.5rem;
+    background-color: green;
 }
 
 .todo-item .actions .delete {
-	background-color: red;
+    background-color: red;
 }
 
 .todo-item.done .todo-content input {
-	text-decoration: line-through;
-	color: black;
+    text-decoration: line-through;
+    color: black;
 }
