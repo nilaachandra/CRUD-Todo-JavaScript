@@ -80,6 +80,8 @@ function DisplayTodos () {
 
 		// Set the content of the todo content div
 		content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+        edit.innerHTML = 'Edit';
+		deleteButton.innerHTML = 'Delete';
 		// Set the labels and append elements to the todo item div
 		label.appendChild(input);
 		label.appendChild(span);
